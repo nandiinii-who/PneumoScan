@@ -1,0 +1,468 @@
+
+/* General Page Styling */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #253449;
+}
+
+/* Navigation Bar */
+
+header {
+    background-color: #142d4e;
+    color: white;
+    padding: 25px 40px;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin-top: 8px;
+    color: #c9d9ed;
+}
+
+/* Main Content */
+
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 34px;
+    color: #142d4e;
+}
+
+main > p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #65758b;
+    margin-bottom: 40px;
+}
+
+/* Upload and Result Sections */
+
+section {
+    background-color: white;
+    padding: 35px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    border: 1px solid #e3eaf3;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #142d4e;
+    font-size: 23px;
+}
+
+section p {
+    color: #65758b;
+    line-height: 1.6;
+}
+
+/* X-ray Upload Input */
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    border: 2px dashed #9db8d5;
+    border-radius: 10px;
+    background-color: #f8fbff;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    border-color: #2463a6;
+    background-color: #eef6ff;
+}
+
+/* Analysis Result */
+
+#resultMessage {
+    padding: 20px;
+    background-color: #f1f6fc;
+    border-radius: 8px;
+    color: #52677f;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #7b8797;
+    font-size: 13px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+
+    main {
+        margin: 30px auto;
+    }
+
+    main h1 {
+        font-size: 26px;
+    }
+
+    section {
+        padding: 22px;
+    }
+}
+
+/* X-ray Image Preview */
+
+#previewSection {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8fbff;
+    border: 1px solid #e3eaf3;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#previewSection h3 {
+    color: #142d4e;
+    margin-bottom: 20px;
+}
+
+#xrayPreview {
+    display: block;
+    max-width: 100%;
+    max-height: 350px;
+    margin: 0 auto;
+    border-radius: 10px;
+    object-fit: contain;
+    border: 1px solid #d9e3ee;
+}
+
+#uploadStatus {
+    margin-top: 15px;
+    color: #237a56;
+    font-weight: 600;
+}
+
+/* Analyze X-ray Button */
+
+#analyzeButton {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px 25px;
+
+    background-color: #2463a6;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect */
+
+#analyzeButton:hover:not(:disabled) {
+    background-color: #174b83;
+}
+
+/* Disabled Button */
+
+#analyzeButton:disabled {
+    background-color: #a9b8c9;
+    cursor: not-allowed;
+}
+
+/* Reset X-ray Button */
+
+#resetButton {
+    display: block;
+    width: 100%;
+
+    margin-top: 12px;
+    padding: 15px 25px;
+
+    background-color: white;
+    color: #2463a6;
+
+    border: 2px solid #2463a6;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Reset Button Hover */
+
+#resetButton:hover {
+    background-color: #eef6ff;
+}
+
+/* Backend Connection Status */
+
+#backendStatus {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Checking Connection */
+
+#backendStatus.checking {
+    background-color: #fff7e6;
+    color: #9a6700;
+}
+
+/* Connected */
+
+#backendStatus.connected {
+    background-color: #e8f7ef;
+    color: #237a56;
+}
+
+/* Disconnected */
+
+#backendStatus.disconnected {
+    background-color: #fdecec;
+    color: #b42318;
+}
+
+/* =====================================
+   PNEUMOSCAN ANALYSIS RESULT CARD
+===================================== */
+
+#resultCard {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 28px;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+/* Card Header */
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.result-header h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin: 0;
+}
+
+.analysis-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Card Divider */
+
+#resultCard hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 20px 0;
+}
+
+/* Prediction Section */
+
+.prediction-section {
+    margin: 24px 0;
+}
+
+.result-label {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+#predictionValue {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+/* NORMAL Prediction */
+
+#predictionValue.normal {
+    color: #0f766e;
+}
+
+/* PNEUMONIA Prediction */
+
+#predictionValue.pneumonia {
+    color: #dc2626;
+}
+
+#predictionDescription {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Model Score Section */
+
+.score-section {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 24px 0;
+}
+
+.score-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #334155;
+    font-size: 14px;
+}
+
+#scoreValue {
+    font-size: 24px;
+    color: #1e293b;
+}
+
+/* Score Progress Bar */
+
+.score-track {
+    position: relative;
+    height: 14px;
+    background: #e2e8f0;
+    border-radius: 20px;
+}
+
+#scoreBar {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    background: #64748b;
+    transition: width 0.8s ease;
+}
+
+#scoreBar.normal {
+    background: #0f766e;
+}
+
+#scoreBar.pneumonia {
+    background: #dc2626;
+}
+
+/* Classification Threshold Marker */
+
+.threshold-marker {
+    position: absolute;
+    left: 75%;
+    top: -4px;
+    width: 2px;
+    height: 22px;
+    background: #1e293b;
+    z-index: 2;
+}
+
+/* Score Labels */
+
+.score-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* Medical Disclaimer */
+
+.medical-disclaimer {
+    background: #f1f5f9;
+    border-left: 4px solid #64748b;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 24px;
+}
+
+.medical-disclaimer strong {
+    color: #334155;
+    font-size: 14px;
+}
+
+.medical-disclaimer p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 8px 0 0;
+}
+
+/* Mobile Responsive Design */
+
+@media (max-width: 600px) {
+
+    #resultCard {
+        padding: 18px;
+    }
+
+    #predictionValue {
+        font-size: 26px;
+    }
+
+    .score-section {
+        padding: 15px;
+    }
+
+    .score-header {
+        font-size: 12px;
+    }
+
+    #scoreValue {
+        font-size: 20px;
+    }
+
+    .score-labels {
+        font-size: 10px;
+    }
+
+}

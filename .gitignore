@@ -1,0 +1,46 @@
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# macOS system files
+.DS_Store
+
+# Dataset
+dataset/
+
+# Environment variables and secrets
+.env
+.env.*
+
+
+# Model training checkpoints
+*.keras
+*.h5
+*.hdf5
+
+# Include the final lightweight inference model
+!model/pneumoscan_inference.keras
+
+
+# Training logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+
+# Generated dataset split files
+model/dataset_split.csv
+model/dataset_split_grouped.csv

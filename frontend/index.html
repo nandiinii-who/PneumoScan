@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PneumoScan | AI Pneumonia Detection</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h2>🫁 PneumoScan</h2>
+        <p>AI-Powered Chest X-ray Analysis</p>
+    </header>
+
+    <hr>
+
+    <!-- Main Content -->
+    <main>
+
+        <h1>Pneumonia Detection Using Deep Learning</h1>
+
+<!-- Backend Connection Status -->
+<p id="backendStatus">
+    Checking backend connection...
+</p>
+
+
+        <p>
+            Upload a chest X-ray image to analyze
+            patterns associated with pneumonia
+            using artificial intelligence.
+        </p>
+
+        <!-- Upload Section -->
+        <section>
+
+            <h2>Upload Chest X-ray</h2>
+
+            <p>
+                Select a PNG or JPEG chest X-ray image.
+            </p>
+
+            <input
+                type="file"
+                id="xrayUpload"
+                accept="image/png,image/jpeg"
+            >
+
+<!-- X-ray Image Preview -->
+<div id="previewSection" style="display: none;">
+
+    <h3>Selected Chest X-ray</h3>
+
+    <img
+        id="xrayPreview"
+        alt="Uploaded chest X-ray preview"
+    >
+
+    <p id="uploadStatus"></p>
+
+<!-- Analyze X-ray Button -->
+<button id="analyzeButton" disabled>
+    Analyze X-ray
+</button>
+
+<!-- Reset X-ray Button -->
+<button id="resetButton" type="button">
+    Reset X-ray
+</button>
+
+
+</div>
+
+
+        </section>
+
+        <!-- Result Section -->
+       
+<!-- Result Section -->
+<section id="resultSection">
+
+    <h2>Analysis Result</h2>
+
+    <!-- Initial Status Message -->
+    <p id="resultMessage">
+        No X-ray has been analyzed yet.
+    </p>
+
+    <!-- AI Result Card -->
+    <div id="resultCard" style="display: none;">
+
+        <!-- Card Header -->
+        <div class="result-header">
+
+            <h3>PneumoScan Analysis</h3>
+
+            <span class="analysis-badge">
+                Analysis Complete
+            </span>
+
+        </div>
+
+        <hr>
+
+        <!-- AI Prediction -->
+        <div class="prediction-section">
+
+            <p class="result-label">
+                AI PREDICTION
+            </p>
+
+            <h2 id="predictionValue">
+                NORMAL
+            </h2>
+
+            <p id="predictionDescription">
+                Analysis completed.
+            </p>
+
+        </div>
+
+        <!-- Pneumonia Model Score -->
+        <div class="score-section">
+
+            <div class="score-header">
+
+                <span>Pneumonia Model Score</span>
+
+                <strong id="scoreValue">
+                    0%
+                </strong>
+
+            </div>
+
+            <!-- Score Progress Bar -->
+            <div class="score-track">
+
+                <div id="scoreBar"></div>
+
+                <div class="threshold-marker"></div>
+
+            </div>
+
+            <!-- Score Labels -->
+            <div class="score-labels">
+
+                <span>0%</span>
+
+                <span>Threshold: 75%</span>
+
+                <span>100%</span>
+
+            </div>
+
+        </div>
+
+        <!-- Medical Disclaimer -->
+        <div class="medical-disclaimer">
+
+            <strong>⚠ Educational Use Only</strong>
+
+            <p>
+                This is an experimental AI output,
+                not a medical diagnosis. The model score
+                does not represent the probability that
+                a patient has pneumonia.
+            </p>
+
+            <p>
+                Consult a qualified healthcare professional
+                for medical advice.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            For educational and research purposes only.
+            Not intended for medical diagnosis.
+        </p>
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
